@@ -1,0 +1,119 @@
+/* OurApproach.css */
+.our-approach {
+    background-color: var(--primary-bg);
+    /* Use off-white/white hero background to contrast the previous Red section */
+    padding: 120px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.approach-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /* Text on left, image on right */
+    gap: 80px;
+    align-items: center;
+}
+
+/* --- Text Content Styling --- */
+.approach-text-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.approach-subtitle {
+    color: var(--accent-red);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.approach-title {
+    color: var(--text-dark);
+    /* or var(--text-heading) if defined globally */
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+}
+
+.approach-body {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    margin-bottom: 32px;
+}
+
+.approach-body p {
+    color: var(--text-gray);
+    /* or var(--text-body) */
+    font-size: 18px;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* CTA Button - Styling to match original site Hero flow */
+.approach-cta {
+    background-color: var(--accent-red);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 32px;
+    border-radius: 8px;
+    /* Classic sharp/soft edge */
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.approach-cta:hover {
+    background-color: var(--accent-red-hover, #8F1117);
+    /* Uses root variable or fallback */
+    transform: translateY(-2px);
+}
+
+/* --- Image / Right Side Styling --- */
+.approach-image-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.approach-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    /* Pure square */
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 16px 32px rgba(0, 0, 0, 0.08);
+    /* slight shadow for image */
+    display: block;
+    /* prevents inline space below img */
+}
+
+/* --- Responsive Adjustments --- */
+@media (max-width: 992px) {
+    .approach-inner {
+        /* This natively stacks the elements. 
+           Since 'approach-text-content' is 1st in the HTML DOM, it will naturally render ABOVE the image. 
+           This fulfills the "Text ABOVE the image on Mobile" constraint precisely. */
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .approach-text-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .approach-title {
+        font-size: 32px;
+    }
+
+    .approach-body p {
+        font-size: 16px;
+    }
+}

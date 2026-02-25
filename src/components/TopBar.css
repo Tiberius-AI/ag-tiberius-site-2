@@ -1,0 +1,59 @@
+.top-bar {
+    background-color: var(--text-dark);
+    color: white;
+    padding: 8px 0;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.top-bar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.call-now {
+    font-weight: 800;
+    color: white;
+    text-decoration: underline;
+}
+
+.call-now:hover {
+    color: var(--accent-red);
+}
+
+.top-bar-right {
+    display: flex;
+    align-items: center;
+}
+
+.customer-login {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: white;
+    transition: opacity 0.2s;
+}
+
+.customer-login:hover {
+    opacity: 0.8;
+}
+
+.login-icon {
+    width: 14px;
+    height: 14px;
+}
+
+@media (max-width: 768px) {
+    .top-bar-inner {
+        flex-direction: column;
+        text-align: center;
+        gap: 8px;
+    }
+}

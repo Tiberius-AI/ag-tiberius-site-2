@@ -1,0 +1,83 @@
+.header {
+    background-color: var(--primary-bg);
+    padding: 20px 0;
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo-link {
+    display: flex;
+    align-items: center;
+}
+
+.header-logo {
+    max-height: 48px;
+    /* Scales down the large underlying asset to fit nav */
+    width: auto;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: scale(1.02);
+}
+
+.main-nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav-list {
+    display: flex;
+    gap: 32px;
+}
+
+.nav-link {
+    font-size: 15px;
+    font-weight: 600;
+    color: var(--text-dark);
+    transition: color 0.2s;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.nav-link:hover {
+    color: var(--accent-red);
+}
+
+.caret {
+    font-size: 8px;
+    color: var(--text-gray);
+}
+
+.cta-button {
+    padding: 12px 24px;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 14px;
+    transition: all 0.2s;
+}
+
+.primary-cta {
+    background-color: var(--accent-red);
+    color: white;
+}
+
+.primary-cta:hover {
+    background-color: var(--accent-red-hover);
+}
+
+@media (max-width: 900px) {
+    .main-nav {
+        display: none;
+    }
+}

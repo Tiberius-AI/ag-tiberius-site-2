@@ -1,0 +1,316 @@
+/* LiveDemo.css */
+.live-demo {
+    background-color: var(--primary-bg);
+    /* Use off-white background matching site */
+    padding: 120px 0;
+    position: relative;
+    z-index: 2;
+}
+
+.demo-inner {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* On Desktop, flex row: Chat left (order -1), Text right */
+@media (min-width: 1024px) {
+    .demo-inner {
+        flex-direction: row;
+        align-items: center;
+        gap: 80px;
+    }
+
+    .demo-text-content {
+        flex: 1;
+        order: 2;
+        /* Forces text to the right on desktop, while retaining HTML DOM order for mobile */
+    }
+
+    .demo-chat-wrapper {
+        flex: 1;
+        order: 1;
+        /* Forces chat to the left */
+    }
+}
+
+/* --- Text Content Styling --- */
+.demo-subtitle {
+    color: var(--accent-red);
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+    display: block;
+}
+
+.demo-title {
+    color: var(--text-dark);
+    font-size: 40px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+}
+
+.demo-body {
+    color: var(--text-gray);
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 32px;
+}
+
+.demo-features {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.demo-features li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--text-dark);
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.demo-features .check-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--accent-red);
+    flex-shrink: 0;
+}
+
+.demo-cta {
+    background-color: var(--accent-red);
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 16px 32px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.demo-cta:hover {
+    background-color: #8F1117;
+    transform: translateY(-2px);
+}
+
+/* --- Chat Simulation Styling --- */
+.demo-chat-wrapper {
+    perspective: 1000px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.chat-interface {
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 0 24px 50px rgba(0, 0, 0, 0.08);
+    /* subtle sophisticated shadow */
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    /* very subtle card border */
+    overflow: hidden;
+    width: 100%;
+    max-width: 480px;
+    /* keep it phone/card sized so it looks like a real chat window */
+    display: flex;
+    flex-direction: column;
+    height: 600px;
+    /* fixed height layout */
+}
+
+/* Chat Header with Live indicator */
+.chat-header {
+    background-color: #F9FAFB;
+    padding: 20px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    flex-shrink: 0;
+}
+
+.live-indicator {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    font-weight: 800;
+    color: var(--text-dark);
+    letter-spacing: 1px;
+}
+
+.pulse-dot {
+    width: 8px;
+    height: 8px;
+    background-color: #22C55E;
+    /* Emerald green for live */
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+    }
+
+    70% {
+        transform: scale(1);
+        box-shadow: 0 0 0 6px rgba(34, 197, 94, 0);
+    }
+
+    100% {
+        transform: scale(0.95);
+        box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+    }
+}
+
+.chat-subtitle {
+    font-size: 12px;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+/* Chat Body Layout */
+.chat-body {
+    flex: 1;
+    padding: 24px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    background-color: #FFFFFF;
+    scroll-behavior: smooth;
+
+    /* custom scrollbar for sleekness */
+}
+
+.chat-body::-webkit-scrollbar {
+    width: 6px;
+}
+
+.chat-body::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+    background: #E5E7EB;
+    border-radius: 6px;
+}
+
+
+/* Message Bubble Animation */
+.chat-message-wrapper {
+    display: flex;
+    flex-direction: column;
+    animation: slideUpFadeMsg 0.4s ease forwards;
+    /* The beautiful bubble entrance */
+    opacity: 0;
+    transform: translateY(12px);
+    max-width: 85%;
+}
+
+.chat-message-wrapper.caller {
+    align-self: flex-end;
+    align-items: flex-end;
+}
+
+.chat-message-wrapper.ai {
+    align-self: flex-start;
+    align-items: flex-start;
+}
+
+@keyframes slideUpFadeMsg {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Labels above bubbles */
+.chat-sender-label {
+    font-size: 10px;
+    font-weight: 800;
+    color: #9CA3AF;
+    margin-bottom: 6px;
+    letter-spacing: 0.5px;
+}
+
+/* Bubbles themselves */
+.chat-bubble {
+    padding: 14px 18px;
+    border-radius: 16px;
+    font-size: 15px;
+    line-height: 1.5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
+}
+
+.chat-bubble.caller {
+    background-color: #F3F4F6;
+    /* light gray */
+    color: var(--text-dark);
+    border-bottom-right-radius: 4px;
+    /* classic tail */
+}
+
+.chat-bubble.ai {
+    background-color: var(--accent-red);
+    /* brand recognizable AI message */
+    color: #FFFFFF;
+    border-bottom-left-radius: 4px;
+    /* AI tail */
+}
+
+
+/* Animated Typing Indicator */
+.typing-bubble {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 20px;
+}
+
+.typing-bubble .dot {
+    width: 6px;
+    height: 6px;
+    background-color: currentColor;
+    border-radius: 50%;
+    animation: bounce 1.4s infinite ease-in-out both;
+    opacity: 0.6;
+}
+
+.typing-bubble .dot:nth-child(1) {
+    animation-delay: -0.32s;
+}
+
+.typing-bubble .dot:nth-child(2) {
+    animation-delay: -0.16s;
+}
+
+@keyframes bounce {
+
+    0%,
+    80%,
+    100% {
+        transform: scale(0);
+    }
+
+    40% {
+        transform: scale(1);
+    }
+}

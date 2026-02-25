@@ -1,0 +1,193 @@
+.revenue-impact-section {
+    padding: 6rem 0;
+    background-color: var(--primary-bg);
+    color: var(--text-dark);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    min-height: 400px;
+}
+
+.revenue-impact-inner {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.impact-card {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+/* Cycle States */
+.cycle-state {
+    position: absolute;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.5s ease;
+}
+
+.industry-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--text-gray);
+    letter-spacing: 0.05em;
+    margin-bottom: 1rem;
+}
+
+.industry-icon {
+    width: 20px;
+    height: 20px;
+    color: var(--text-gray);
+}
+
+.revenue-number {
+    font-size: 4.5rem;
+    font-weight: 800;
+    color: var(--accent-red);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: baseline;
+    gap: 0.5rem;
+}
+
+.revenue-suffix {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-red);
+    text-transform: lowercase;
+}
+
+.context-line {
+    font-size: 1.25rem;
+    color: var(--text-gray);
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+    font-style: italic;
+}
+
+/* Animations defined */
+.slide-in-up {
+    transform: translateY(0);
+    opacity: 1;
+    animation: enter-up 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.slide-out-up {
+    transform: translateY(-50px);
+    opacity: 0;
+}
+
+@keyframes enter-up {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Summary State */
+.summary-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.fade-in-up {
+    animation: enter-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.summary-small-text {
+    font-size: 1.125rem;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+.summary-large-text {
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: var(--text-dark);
+    line-height: 1.1;
+    max-width: 700px;
+    margin: 0;
+}
+
+.summary-cta-button {
+    background-color: var(--accent-red);
+    color: #ffffff;
+    padding: 1rem 2.5rem;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 1.125rem;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.2s;
+    margin-top: 1rem;
+}
+
+.summary-cta-button:hover {
+    background-color: var(--accent-red-hover);
+    transform: translateY(-2px);
+}
+
+.source-line {
+    font-size: 0.75rem;
+    color: #9ca3af;
+    margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+    .revenue-impact-section {
+        padding: 4rem 1rem;
+        min-height: auto;
+    }
+
+    .impact-card {
+        height: 350px;
+    }
+
+    .revenue-number {
+        font-size: 3rem;
+        flex-direction: column;
+        align-items: center;
+        gap: 0;
+    }
+
+    .revenue-suffix {
+        font-size: 1.25rem;
+    }
+
+    .context-line {
+        font-size: 1.125rem;
+    }
+
+    .summary-large-text {
+        font-size: 2.5rem;
+    }
+}

@@ -1,0 +1,203 @@
+/* SalesPoints.css */
+/* --- Executive Trust Palette Variables --- */
+:root {
+    --text-heading: #1F2937;
+    /* Dark Charcoal for headers */
+    --text-body: #4B5563;
+    /* Muted Slate for body copy */
+    --accent-brass: #B8975E;
+    /* Muted Brass for icons */
+
+    /* Standard dark red from Tiberius screenshot for the shadow tint */
+    --shadow-base: rgba(163, 22, 33, 0.08);
+    --shadow-hover: rgba(163, 22, 33, 0.15);
+}
+
+.sales-points {
+    background-color: var(--accent-red);
+    /* Keeping the bold requested red background */
+    padding: 120px 0;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    /* Ensure fade-in isn't cut off wildly */
+}
+
+.sales-points-inner {
+    max-width: 1600px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+}
+
+/* --- Feature Card Base Styling (Adapted from request) --- */
+.sales-point-card {
+    background: linear-gradient(160deg, #FFFFFF 0%, #FAFAFA 100%);
+    border-radius: 16px;
+    padding: 40px 32px;
+
+    /* The environmental red-tinted shadow */
+    box-shadow: 0 10px 24px var(--shadow-base);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    /* Subtle crisp edge */
+
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    /* Spacing between icon, header, and text */
+
+    /* Smooth easing for the hover lift */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    will-change: transform, box-shadow, opacity;
+
+    /* Animated Entrance Properties */
+    opacity: 0;
+    transform: translateY(40px);
+    animation: slideUpFade 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    animation-delay: calc(var(--animation-order) * 0.15s + 0.2s);
+}
+
+/* --- The Hover Interaction --- */
+.sales-point-card:hover {
+    transform: translateY(-8px);
+    /* The classic "lift" */
+    box-shadow: 0 20px 40px var(--shadow-hover);
+    /* Expanded, softer shadow */
+}
+
+/* --- Typography --- */
+.sales-point-card h3 {
+    color: var(--text-heading);
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.3;
+}
+
+.sales-point-card p {
+    color: var(--text-body);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* --- Additional Card Pizzazz Elements --- */
+.card-accent-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--accent-brass) 0%, #E6BE76 100%);
+    transition: width 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.sales-point-card:hover .card-accent-line {
+    width: 100%;
+}
+
+/* --- Icon Styling & Micro-Interaction --- */
+.sales-point-card .icon-badge {
+    height: 60px;
+    width: 60px;
+    background: rgba(184, 151, 94, 0.12);
+    /* Pale brass circle */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 8px;
+    /* Space between badge and title */
+    transition: all 0.4s ease;
+    border: 1px solid rgba(184, 151, 94, 0.05);
+    /* Very subtle outer ring */
+}
+
+.sales-point-card .icon-wrapper {
+    color: var(--accent-brass);
+    font-size: 28px;
+    display: inline-flex;
+    transition: transform 0.3s ease;
+}
+
+.sales-point-card:hover .icon-badge {
+    background: rgba(184, 151, 94, 0.22);
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(184, 151, 94, 0.15);
+}
+
+.sales-point-card:hover .icon-wrapper {
+    transform: scale(1.1);
+}
+
+/* --- Card Interaction Link --- */
+.card-link {
+    margin-top: auto;
+    /* Push it to the bottom natively thanks to flex flex-direction column */
+    padding-top: 16px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--text-heading);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+.card-link svg {
+    transition: transform 0.3s ease;
+}
+
+.sales-point-card:hover .card-link {
+    color: var(--accent-brass);
+}
+
+.sales-point-card:hover .card-link svg {
+    transform: translateX(6px);
+}
+
+/* --- Entrance Animation Keyframes --- */
+@keyframes slideUpFade {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* --- Responsive grid changes --- */
+@media (max-width: 1280px) {
+    .sales-points-inner {
+        padding: 0 24px;
+        gap: 24px;
+    }
+
+    .sales-point-card {
+        padding: 32px 24px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .sales-points-inner {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 640px) {
+    .sales-points-inner {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+    }
+
+    .sales-points {
+        padding: 80px 0;
+    }
+}
