@@ -1,0 +1,640 @@
+.proposal-race-section {
+    padding: 100px 0;
+    background-color: var(--secondary-bg, #F8F8F8);
+    overflow: hidden;
+}
+
+.proposal-race-inner {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 60px;
+    align-items: center;
+}
+
+/* ================= LEFT COLUMN: ANIMATION ================= */
+.race-animation-col {
+    background: white;
+    border-radius: 16px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.race-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.track-title {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 20px;
+}
+
+.competitor-track .track-title {
+    color: #999;
+}
+
+.you-title {
+    color: var(--accent-red, #ff0000);
+}
+
+.track {
+    position: relative;
+    min-height: 140px;
+}
+
+.timeline-line {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+    right: 10px;
+    height: 3px;
+    background: #E5E5E5;
+    border-radius: 2px;
+}
+
+.you-line {
+    background: #FFD6D6;
+    overflow: hidden;
+}
+
+.timeline-progress {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0%;
+    background: var(--accent-red, #ff0000);
+}
+
+/* Base Event */
+.timeline-events {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+    /* Offset to align with line */
+    padding: 0 10px;
+}
+
+.event {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 20%;
+    opacity: 0;
+    /* Hiding initially */
+    transform: translateY(10px);
+}
+
+.node {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #B3B3B3;
+    margin-bottom: 12px;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 0 3px white;
+}
+
+.you-node {
+    background: var(--accent-red, #ff0000);
+}
+
+.event-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.time {
+    font-size: 11px;
+    font-weight: 700;
+    color: #888;
+}
+
+.competitor-track .event-desc {
+    font-size: 12px;
+    color: #888;
+    line-height: 1.3;
+}
+
+.you-track .time {
+    color: var(--accent-red, #ff0000);
+}
+
+.you-track .event-desc {
+    font-size: 12px;
+    color: var(--text-dark, #111);
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.event-icon {
+    width: 14px;
+    height: 14px;
+    margin-right: 4px;
+    vertical-align: middle;
+}
+
+.success {
+    color: #10B981 !important;
+}
+
+.success .event-icon {
+    color: #10B981;
+}
+
+/* Animations Trigger */
+.is-animating .competitor-track .c-event-1 {
+    animation: slowFadeIn 1s forwards cubic-bezier(0.4, 0, 0.2, 1) 0.5s;
+}
+
+.is-animating .competitor-track .c-event-2 {
+    animation: slowFadeIn 1s forwards cubic-bezier(0.4, 0, 0.2, 1) 3s;
+}
+
+.is-animating .competitor-track .c-event-3 {
+    animation: slowFadeIn 1s forwards cubic-bezier(0.4, 0, 0.2, 1) 6s;
+}
+
+.is-animating .competitor-track .c-event-4 {
+    animation: slowFadeIn 1s forwards cubic-bezier(0.4, 0, 0.2, 1) 9s;
+}
+
+.is-animating .competitor-track .lost-badge {
+    animation: popIn 0.5s forwards 10s;
+}
+
+.is-animating .you-track .timeline-progress {
+    animation: fastFill 3.5s forwards linear 0.5s;
+}
+
+.is-animating .you-track .y-event-1 {
+    animation: snapIn 0.4s forwards 0.5s;
+}
+
+.is-animating .you-track .y-event-2 {
+    animation: snapIn 0.4s forwards 1.2s;
+}
+
+.is-animating .you-track .y-event-3 {
+    animation: snapIn 0.4s forwards 2.0s;
+}
+
+.is-animating .you-track .y-event-4 {
+    animation: snapIn 0.4s forwards 3.0s;
+}
+
+.is-animating .you-track .y-event-5 {
+    animation: snapIn 0.4s forwards 4.0s;
+}
+
+.is-animating .you-track .mini-document .doc-logo {
+    animation: docBuild 0.3s forwards 2.2s;
+}
+
+.is-animating .you-track .mini-document .doc-header {
+    animation: docBuild 0.3s forwards 2.4s;
+}
+
+.is-animating .you-track .mini-document .doc-line-1 {
+    animation: docBuild 0.3s forwards 2.6s;
+}
+
+.is-animating .you-track .mini-document .doc-line-2 {
+    animation: docBuild 0.3s forwards 2.8s;
+}
+
+.is-animating .you-track .mini-document .doc-total {
+    animation: docBuild 0.3s forwards 3.0s;
+}
+
+.is-animating .you-track .n1 {
+    animation: slideUpFade 0.4s forwards 4.8s;
+}
+
+.is-animating .you-track .n2 {
+    animation: slideUpFade 0.4s forwards 5.6s;
+}
+
+.is-animating .you-track .n3 {
+    animation: popInGlow 0.6s forwards 6.4s;
+}
+
+.is-animating .race-summary {
+    animation: fadeIn 1s forwards 8s;
+}
+
+
+/* Specific Elements */
+.lost-badge {
+    position: absolute;
+    right: 0;
+    top: -30px;
+    background: #FFF1F1;
+    color: #DC2626;
+    border: 1px solid #FECACA;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 600;
+    width: auto;
+    white-space: nowrap;
+}
+
+.mini-document {
+    margin-top: 10px;
+    width: 60px;
+    background: #fdfdfd;
+    border: 1px solid #E5E5E5;
+    border-radius: 4px;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.mini-document>div {
+    opacity: 0;
+    transform: translateY(5px);
+    border-radius: 2px;
+}
+
+.doc-logo {
+    width: 14px;
+    height: 14px;
+    background: var(--accent-red, #ff0000);
+    border-radius: 50% !important;
+    margin-bottom: 2px;
+}
+
+.doc-header {
+    width: 100%;
+    height: 4px;
+    background: #D4D4D4;
+}
+
+.doc-line {
+    width: 80%;
+    height: 3px;
+    background: #E5E5E5;
+}
+
+.doc-line-2 {
+    width: 60%;
+}
+
+.doc-total {
+    width: 40%;
+    height: 4px;
+    background: var(--accent-red, #ff0000);
+    margin-top: 2px;
+    align-self: flex-end;
+}
+
+.notifications-container {
+    position: absolute;
+    bottom: -60px;
+    left: 20%;
+    display: flex;
+    gap: 15px;
+    width: 100%;
+}
+
+.notification {
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 1px solid #F0F0F0;
+    border-radius: 30px;
+    padding: 6px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    color: #333;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+    transform: translateY(15px);
+}
+
+.notification svg {
+    width: 14px;
+    height: 14px;
+    color: #10B981;
+}
+
+.win-badge {
+    background: #ECFDF5;
+    color: #047857;
+    border-color: #A7F3D0;
+    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+}
+
+.race-summary {
+    text-align: center;
+    padding-top: 20px;
+    margin-top: 40px;
+    border-top: 1px solid #E5E5E5;
+    font-size: 14px;
+    color: #555;
+    opacity: 0;
+}
+
+.race-summary strong {
+    color: var(--text-dark, #111);
+}
+
+/* Keyframes */
+@keyframes slowFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    100% {
+        opacity: 0.6;
+        transform: translateY(0);
+    }
+
+    /* Keeping it slightly transparent/muted */
+}
+
+@keyframes fastFill {
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes snapIn {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    70% {
+        opacity: 1;
+        transform: translateY(-2px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes docBuild {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideUpFade {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes popInGlow {
+    0% {
+        opacity: 0;
+        transform: translateY(15px) scale(0.95);
+        box-shadow: 0 0 0 rgba(16, 185, 129, 0);
+    }
+
+    50% {
+        opacity: 1;
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+        box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* ================= RIGHT COLUMN: COPY ================= */
+.race-copy-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.section-label {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--accent-red, #ff0000);
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.section-headline {
+    font-size: 42px;
+    line-height: 1.1;
+    color: var(--text-dark, #111);
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+}
+
+.section-body {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-gray, #666);
+    margin-bottom: 30px;
+}
+
+.feature-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.feature-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark, #111);
+}
+
+.red-check {
+    width: 20px;
+    height: 20px;
+    color: var(--accent-red, #ff0000);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.race-cta {
+    margin-bottom: 16px;
+}
+
+.demo-note {
+    font-size: 14px;
+    color: #888;
+    margin: 0;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 1024px) {
+    .proposal-race-inner {
+        grid-template-columns: 1fr;
+    }
+
+    .race-copy-col {
+        order: -1;
+        margin-bottom: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .race-animation-col {
+        padding: 20px;
+        overflow-x: auto;
+        /* Allow horizontal scroll if needed, though we shrink it */
+    }
+
+    .timeline-events {
+        flex-direction: column;
+        gap: 20px;
+        margin-top: 0;
+    }
+
+    .timeline-line {
+        left: 15px;
+        top: 0;
+        bottom: 0;
+        width: 3px;
+        height: 100%;
+        border-radius: 2px;
+    }
+
+    .timeline-progress {
+        width: 100%;
+        height: 0%;
+    }
+
+    @keyframes fastFill {
+        to {
+            height: 100%;
+        }
+    }
+
+    .event {
+        width: 100%;
+        flex-direction: row;
+        gap: 15px;
+        transform: translateX(-10px);
+    }
+
+    .node {
+        margin-bottom: 0;
+        margin-top: 4px;
+    }
+
+    .lost-badge {
+        position: relative;
+        top: 0;
+        right: auto;
+        margin-top: 10px;
+        align-self: flex-start;
+    }
+
+    .notifications-container {
+        position: relative;
+        bottom: 0;
+        left: 0;
+        flex-direction: column;
+        margin-top: 20px;
+        margin-left: 30px;
+    }
+
+    @keyframes slowFadeIn {
+        0% {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        100% {
+            opacity: 0.6;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes snapIn {
+        0% {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+
+        70% {
+            opacity: 1;
+            transform: translateX(2px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    @keyframes popInGlow {
+        0% {
+            opacity: 0;
+            transform: translateX(-15px) scale(0.95);
+            box-shadow: 0 0 0 rgba(16, 185, 129, 0);
+        }
+
+        50% {
+            opacity: 1;
+            transform: translateX(2px) scale(1.02);
+            box-shadow: 0 0 20px rgba(16, 185, 129, 0.6);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0) scale(1);
+            box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+        }
+    }
+
+    @keyframes slideUpFade {
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}

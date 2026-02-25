@@ -192,7 +192,11 @@
     .hero-buttons {
         flex-direction: column;
         width: 100%;
-        max-width: 320px;
+        max-width: 100%;
+    }
+
+    .hero-btn {
+        width: 100%;
     }
 
     .trust-markers {
@@ -206,5 +210,19 @@
 
     .hero-device-image {
         max-height: 400px;
+    }
+
+    .hero-shape-outer {
+        width: 90vw;
+        height: 90vw;
+        max-width: 440px;
+        max-height: 440px;
+    }
+
+    .hero-shape-inner {
+        width: 75vw;
+        height: 75vw;
+        max-width: 380px;
+        max-height: 380px;
     }
 }

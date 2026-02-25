@@ -1,0 +1,802 @@
+.vision-quoting-section {
+    padding: 100px 0;
+    background-color: var(--secondary-bg, #F8F8F8);
+    overflow: hidden;
+    position: relative;
+    border-top: 1px solid #EAEAEA;
+}
+
+.vision-quoting-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: center;
+}
+
+/* LEFT COLUMN - COPY */
+.vq-copy-col {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.vision-quoting-inner .section-label {
+    font-size: 13px;
+    font-weight: 800;
+    color: var(--accent-red, #ff0000);
+    letter-spacing: 1.5px;
+    margin-bottom: 12px;
+}
+
+.vision-quoting-inner .section-headline {
+    font-size: 42px;
+    line-height: 1.1;
+    color: var(--text-dark, #111);
+    margin-bottom: 24px;
+    letter-spacing: -1px;
+}
+
+.vision-quoting-inner .section-body {
+    font-size: 17px;
+    line-height: 1.6;
+    color: var(--text-gray, #666);
+    margin-bottom: 30px;
+}
+
+.vision-quoting-inner .feature-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 40px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.vision-quoting-inner .feature-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--text-dark, #111);
+}
+
+.vision-quoting-inner .red-check {
+    width: 20px;
+    height: 20px;
+    color: var(--accent-red, #ff0000);
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.vq-cta {
+    margin-bottom: 16px;
+}
+
+/* RIGHT COLUMN - PHONE ANIMATION */
+.vq-animation-col {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.vq-phone-wrapper {
+    position: relative;
+    width: 300px;
+    height: 600px;
+    z-index: 10;
+}
+
+.vq-bg-glow {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    height: 400px;
+    transform: translate(-50%, -50%);
+    background: radial-gradient(circle, rgba(178, 34, 52, 0.15) 0%, transparent 70%);
+    border-radius: 50%;
+    z-index: -1;
+    animation: pulseGlow 8s infinite alternate;
+}
+
+/* Phone structure */
+.vq-phone-frame {
+    position: absolute;
+    inset: 0;
+    background: #1C1C1E;
+    border-radius: 40px;
+    box-shadow:
+        0 25px 50px -12px rgba(0, 0, 0, 0.25),
+        inset 0 0 0 2px #444,
+        inset 0 0 10px rgba(255, 255, 255, 0.2);
+    padding: 8px;
+    overflow: hidden;
+}
+
+.vq-phone-notch {
+    position: absolute;
+    top: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 25px;
+    background: #000;
+    border-radius: 15px;
+    z-index: 20;
+}
+
+.vq-phone-screen {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    border-radius: 32px;
+    overflow: hidden;
+}
+
+.vq-roof-img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transform: scale(1.05);
+}
+
+/* UI Corners */
+.vq-viewfinder-ui {
+    position: absolute;
+    inset: 20px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.vq-corner {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(255, 255, 255, 0.7);
+}
+
+.vq-corner.top-left {
+    top: 0;
+    left: 0;
+    border-right: none;
+    border-bottom: none;
+}
+
+.vq-corner.top-right {
+    top: 0;
+    right: 0;
+    border-left: none;
+    border-bottom: none;
+}
+
+.vq-corner.bottom-left {
+    bottom: 0;
+    left: 0;
+    border-right: none;
+    border-top: none;
+}
+
+.vq-corner.bottom-right {
+    bottom: 0;
+    right: 0;
+    border-left: none;
+    border-top: none;
+}
+
+/* Capture Button */
+.vq-capture-container {
+    position: absolute;
+    bottom: 30px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.vq-capture-btn {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    border: 3px solid white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.vq-capture-btn-inner {
+    width: 48px;
+    height: 48px;
+    background: white;
+    border-radius: 50%;
+    transition: all 0.2s;
+}
+
+.vq-shutter-flash {
+    position: absolute;
+    inset: 0;
+    background: white;
+    opacity: 0;
+    z-index: 15;
+    pointer-events: none;
+}
+
+/* Scan Line */
+.vq-scan-container {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.vq-scan-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: linear-gradient(to bottom, transparent, rgba(178, 34, 52, 0.4), var(--accent-red, #ff0000));
+    border-bottom: 2px solid var(--accent-red, #ff0000);
+    opacity: 0;
+}
+
+.vq-analyzing-toast {
+    position: absolute;
+    top: 50px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    font-size: 13px;
+    padding: 8px 16px;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    backdrop-filter: blur(4px);
+    opacity: 0;
+}
+
+.vq-spinner {
+    width: 14px;
+    height: 14px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-top-color: white;
+    border-radius: 50%;
+    animation: spinSpinner 1s linear infinite;
+}
+
+@keyframes spinSpinner {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Callouts */
+.vq-callouts {
+    position: absolute;
+    inset: 0;
+    z-index: 12;
+    pointer-events: none;
+}
+
+.vq-callout {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    opacity: 0;
+}
+
+.vq-dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    border: 2px solid white;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+}
+
+.vq-bubble {
+    background: white;
+    color: #333;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 8px;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    white-space: nowrap;
+}
+
+.c-red .vq-dot {
+    background: #DC2626;
+}
+
+.c-yellow .vq-dot {
+    background: #F59E0B;
+}
+
+.c-green .vq-dot {
+    background: #10B981;
+}
+
+/* Results Card */
+.vq-results-card {
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    background: white;
+    border-radius: 24px 24px 0 0;
+    padding: 20px;
+    z-index: 20;
+    box-shadow: 0 -10px 30px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+
+.vq-card-handle {
+    width: 40px;
+    height: 4px;
+    background: #E5E5E5;
+    border-radius: 2px;
+    margin: 0 auto 16px auto;
+}
+
+.vq-card-phase-1,
+.vq-card-phase-2 {
+    position: relative;
+    width: 100%;
+}
+
+.vq-card-phase-2 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+}
+
+.vq-card-title {
+    font-size: 15px;
+    font-weight: 700;
+    margin-bottom: 12px;
+    color: #111;
+}
+
+.vq-grade {
+    color: #F59E0B;
+}
+
+.vq-line-items {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.vq-line-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #555;
+    border-bottom: 1px dashed #E5E5E5;
+    padding-bottom: 4px;
+}
+
+.vq-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 800;
+    font-size: 14px;
+    color: #111;
+    margin-bottom: 20px;
+}
+
+.vq-total-price {
+    font-size: 16px;
+    color: var(--accent-red, #ff0000);
+}
+
+.vq-schedule-btn {
+    width: 100%;
+    background: var(--accent-red, #ff0000);
+    color: white;
+    font-size: 14px;
+    font-weight: 700;
+    text-align: center;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(178, 34, 52, 0.3);
+}
+
+/* Phase 2: Confirmation */
+.vq-success-circle {
+    width: 50px;
+    height: 50px;
+    background: #10B981;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 16px;
+    box-shadow: 0 0 20px rgba(16, 185, 129, 0.4);
+}
+
+.vq-success-circle svg {
+    width: 28px;
+    height: 28px;
+}
+
+.vq-confirm-title {
+    font-size: 18px;
+    font-weight: 800;
+    color: #111;
+    margin-bottom: 6px;
+}
+
+.vq-confirm-date {
+    font-size: 14px;
+    font-weight: 600;
+    color: #10B981;
+    margin-bottom: 8px;
+}
+
+.vq-confirm-sub {
+    font-size: 12px;
+    color: #888;
+}
+
+/* ================= ANIMATION TIMELINES (16s cycle) ================= */
+
+/* Hides UI corners after capture */
+.is-animating .vq-viewfinder-ui {
+    animation: vqHideViewfinder 16s infinite;
+}
+
+@keyframes vqHideViewfinder {
+
+    0%,
+    15% {
+        opacity: 1;
+    }
+
+    16%,
+    95% {
+        opacity: 0;
+    }
+
+    98%,
+    100% {
+        opacity: 1;
+    }
+}
+
+.is-animating .vq-capture-btn-inner {
+    animation: vqPressCapture 16s infinite;
+}
+
+@keyframes vqPressCapture {
+
+    0%,
+    11% {
+        transform: scale(1);
+        background: white;
+    }
+
+    12% {
+        transform: scale(0.85);
+        background: #dcdcdc;
+    }
+
+    /* tap down */
+    13% {
+        transform: scale(1);
+    }
+
+    /* release */
+    14%,
+    95% {
+        opacity: 0;
+    }
+
+    98%,
+    100% {
+        opacity: 1;
+    }
+}
+
+.is-animating .vq-capture-container {
+    animation: vqFadeCaptureBtn 16s infinite;
+}
+
+@keyframes vqFadeCaptureBtn {
+
+    0%,
+    14% {
+        opacity: 1;
+    }
+
+    15%,
+    95% {
+        opacity: 0;
+    }
+
+    98%,
+    100% {
+        opacity: 1;
+    }
+}
+
+.is-animating .vq-shutter-flash {
+    animation: vqFlashShutter 16s infinite;
+}
+
+@keyframes vqFlashShutter {
+
+    0%,
+    12.5% {
+        opacity: 0;
+    }
+
+    13% {
+        opacity: 1;
+    }
+
+    14%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.is-animating .vq-scan-line {
+    animation: vqScanSweep 16s infinite;
+}
+
+@keyframes vqScanSweep {
+
+    0%,
+    15% {
+        top: 0;
+        opacity: 0;
+    }
+
+    16% {
+        opacity: 1;
+        top: 0;
+    }
+
+    30% {
+        top: 100%;
+        opacity: 1;
+    }
+
+    31%,
+    100% {
+        opacity: 0;
+        top: 100%;
+    }
+}
+
+.is-animating .vq-analyzing-toast {
+    animation: vqToastFloat 16s infinite;
+}
+
+@keyframes vqToastFloat {
+
+    0%,
+    15% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(10px);
+    }
+
+    17%,
+    32% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+
+    34%,
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+}
+
+/* Callouts stagger */
+.is-animating .vq-callout:nth-child(1) {
+    animation: vqPopCallout 16s infinite 3s;
+}
+
+.is-animating .vq-callout:nth-child(2) {
+    animation: vqPopCallout 16s infinite 3.5s;
+}
+
+.is-animating .vq-callout:nth-child(3) {
+    animation: vqPopCallout 16s infinite 4s;
+}
+
+.is-animating .vq-callout:nth-child(4) {
+    animation: vqPopCallout 16s infinite 4.5s;
+}
+
+/* Keep them visible until it resets. Total cycle is 16s. 3s delay means it pops at 18.75% */
+@keyframes vqPopCallout {
+    0% {
+        opacity: 0;
+        transform: scale(0.8) translateY(10px);
+    }
+
+    5% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+
+    /* stays until towards the end */
+    85%,
+    100% {
+        opacity: 0;
+        transform: scale(0.9) translateY(-10px);
+    }
+}
+
+/* Results Card slides up */
+.is-animating .vq-results-card {
+    animation: vqSlideCard 16s infinite;
+}
+
+@keyframes vqSlideCard {
+
+    0%,
+    48% {
+        bottom: -100%;
+    }
+
+    52%,
+    92% {
+        bottom: 0;
+    }
+
+    96%,
+    100% {
+        bottom: -100%;
+    }
+}
+
+/* Tap schedule button */
+.is-animating .vq-schedule-btn {
+    animation: vqTapSchedule 16s infinite;
+}
+
+@keyframes vqTapSchedule {
+
+    0%,
+    65% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+
+    66% {
+        transform: scale(0.95);
+        filter: brightness(0.8);
+    }
+
+    /* tap */
+    67%,
+    100% {
+        transform: scale(1);
+        filter: brightness(1);
+    }
+}
+
+/* Phase switch (Result to Confirmation) */
+.is-animating .vq-card-phase-1 {
+    animation: vqFadePhase1 16s infinite;
+}
+
+@keyframes vqFadePhase1 {
+
+    0%,
+    68% {
+        opacity: 1;
+        visibility: visible;
+    }
+
+    70%,
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+.is-animating .vq-card-phase-2 {
+    animation: vqFadePhase2 16s infinite;
+}
+
+@keyframes vqFadePhase2 {
+
+    0%,
+    68% {
+        opacity: 0;
+    }
+
+    70%,
+    95% {
+        opacity: 1;
+    }
+
+    96%,
+    100% {
+        opacity: 0;
+    }
+}
+
+.is-animating .vq-success-circle {
+    animation: vqPopSuccess 16s infinite;
+}
+
+@keyframes vqPopSuccess {
+
+    0%,
+    68% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+
+    71%,
+    95% {
+        transform: scale(1);
+        opacity: 1;
+    }
+
+    96%,
+    100% {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+}
+
+/* RESPONSIVE */
+@media (max-width: 992px) {
+    .vision-quoting-section {
+        padding: 60px 0;
+    }
+
+    .vision-quoting-inner {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+
+    .vq-copy-col {
+        order: 2;
+        /* Phone on bottom on mobile */
+    }
+
+    .vq-animation-col {
+        order: 1;
+        /* Phone on top on mobile */
+    }
+}
+
+@media (max-width: 400px) {
+    .vq-phone-wrapper {
+        width: 280px;
+        height: 560px;
+    }
+}
