@@ -10,6 +10,7 @@ import AudioDemo from './components/AudioDemo';
 import VisionQuoting from './components/VisionQuoting';
 import RevenueImpact from './components/RevenueImpact';
 import OurApproach from './components/OurApproach';
+import FAQ from './components/FAQ';
 import './App.css';
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
       <RevenueImpact />
       <ProposalRace />
       <VisionQuoting />
+      <FAQ />
     </>
   );
 }
