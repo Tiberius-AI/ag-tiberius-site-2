@@ -11,6 +11,8 @@ import VisionQuoting from './components/VisionQuoting';
 import RevenueImpact from './components/RevenueImpact';
 import OurApproach from './components/OurApproach';
 import FAQ from './components/FAQ';
+import GrandFinale from './components/GrandFinale';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -28,6 +30,8 @@ function App() {
       <ProposalRace />
       <VisionQuoting />
       <FAQ />
+      <GrandFinale />
+      <Footer />
     </>
   );
 }
