@@ -370,11 +370,10 @@
     transition-delay: 300ms;
 }
 
-/* Mobile Responsive */
 @media (max-width: 768px) {
     .gf-grid {
         grid-template-columns: 1fr;
-        gap: 48px;
+        gap: 40px;
     }
 
     .gf-center {
@@ -390,36 +389,50 @@
     }
 
     .gf-column {
-        align-items: flex-start;
+        align-items: center;
     }
 
     .gf-bullet {
-        max-width: 100%;
+        max-width: 250px;
+        width: 100%;
     }
 
-    .gf-left .gf-bullet-content {
-        text-align: left;
-    }
-
-    .gf-left .gf-bullet {
-        flex-direction: row-reverse;
-    }
-
-    /* Reset layout so it's consistently icon-then-text for all bullets */
     .gf-left .gf-bullet,
     .gf-right .gf-bullet {
         flex-direction: row;
+        justify-content: flex-start;
+    }
+
+    .gf-left .gf-bullet-content,
+    .gf-right .gf-bullet-content {
+        text-align: left;
     }
 
     .gf-pricing-badge {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 20px;
-        gap: 4px;
+        flex-direction: row;
+        align-items: baseline;
+        justify-content: center;
+        flex-wrap: wrap;
+        padding: 12px 20px;
+        gap: 6px;
+    }
+
+    .pricing-amount {
+        font-size: 20px;
     }
 
     .pricing-plus {
-        margin: 4px 0;
+        font-size: 16px;
+        margin: 0;
+    }
+
+    .pricing-label {
+        font-size: 12px;
+    }
+
+    .gf-cta-button {
+        padding: 14px 32px;
+        font-size: 16px;
+        white-space: nowrap;
     }
 }

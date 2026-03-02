@@ -1,0 +1,90 @@
+/* src/components/TermsOfService.css */
+
+.terms-of-service-container {
+    background-color: #FFFFFF;
+    width: 100%;
+}
+
+.terms-of-service-content {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 80px 24px 60px 24px;
+    font-family: 'DM Sans', sans-serif;
+    color: #334155;
+    font-size: 16px;
+    line-height: 1.8;
+}
+
+.terms-of-service-content h1,
+.terms-of-service-content h2,
+.terms-of-service-content h3 {
+    color: #0F172A;
+    font-weight: 700;
+}
+
+.terms-of-service-title {
+    font-family: 'Cabinet Grotesk', 'DM Sans', sans-serif;
+    font-size: 36px;
+    font-weight: 800;
+    text-align: center;
+    margin: 0 0 8px 0;
+}
+
+.terms-of-service-date {
+    color: #94A3B8;
+    font-size: 14px;
+    text-align: center;
+    margin-top: 0;
+    margin-bottom: 48px;
+}
+
+.terms-of-service-content h2 {
+    font-size: 22px;
+    margin-top: 40px;
+    margin-bottom: 16px;
+}
+
+.terms-of-service-content h3 {
+    font-size: 18px;
+    margin-top: 24px;
+    margin-bottom: 12px;
+}
+
+.terms-of-service-content p {
+    margin-bottom: 16px;
+}
+
+.terms-of-service-content ul {
+    margin-top: 0;
+    margin-bottom: 16px;
+    padding-left: 24px;
+}
+
+.terms-of-service-content li {
+    margin-bottom: 8px;
+}
+
+.terms-of-service-content a {
+    color: #334155;
+    text-decoration: underline;
+}
+
+.terms-of-service-content a:hover {
+    color: #0F172A;
+}
+
+.terms-of-service-content strong {
+    font-weight: 700;
+    color: #0F172A;
+}
+
+/* Specific section spacing */
+.terms-of-service-content section:last-of-type p:last-of-type {
+    margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+    .terms-of-service-content {
+        padding-top: 48px;
+    }
+}

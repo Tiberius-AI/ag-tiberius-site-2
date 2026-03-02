@@ -76,8 +76,114 @@
     background-color: var(--accent-red-hover);
 }
 
+.mobile-toggle-btn {
+    display: none;
+    cursor: pointer;
+    z-index: 101;
+    padding: 10px;
+}
+
+.hamburger {
+    width: 24px;
+    height: 18px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+
+.hamburger span {
+    display: block;
+    height: 2px;
+    width: 100%;
+    background-color: var(--text-dark);
+    border-radius: 2px;
+    transition: all 0.3s ease-in-out;
+}
+
+.hamburger.open span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+}
+
+.hamburger.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+.mobile-menu-wrapper {
+    display: none;
+}
+
 @media (max-width: 900px) {
-    .main-nav {
-        display: none;
+    .desktop-only {
+        display: none !important;
+    }
+
+    .mobile-toggle-btn {
+        display: block;
+    }
+
+    .mobile-menu-wrapper {
+        display: block;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background-color: var(--primary-bg);
+        border-bottom: 1px solid var(--border-light);
+
+        /* Accordion transition logic */
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.3s ease-in-out;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .mobile-menu-wrapper.open {
+        max-height: 400px;
+    }
+
+    .mobile-nav {
+        padding: 24px;
+        display: flex;
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .mobile-nav-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .mobile-nav-link {
+        font-size: 18px;
+        font-weight: 600;
+        color: var(--text-dark);
+        text-decoration: none;
+        display: block;
+        transition: color 0.2s;
+    }
+
+    .mobile-nav-link:hover {
+        color: var(--accent-red);
+    }
+
+    .mobile-actions {
+        display: flex;
+        flex-direction: column;
+        margin-top: 8px;
+    }
+
+    .mobile-actions .cta-button {
+        text-align: center;
+        width: 100%;
+        padding: 16px;
     }
 }
