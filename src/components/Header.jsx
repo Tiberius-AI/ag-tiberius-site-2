@@ -40,6 +40,9 @@ const Header = () => {
                         <li className="nav-item">
                             <a href="#pricing" className="nav-link">Pricing</a>
                         </li>
+                        <li className="nav-item">
+                            <Link to="/bid-assassin" className="nav-link">Bid Assassin</Link>
+                        </li>
                     </ul>
                 </nav>
 
@@ -71,6 +74,9 @@ const Header = () => {
                         </li>
                         <li className="mobile-nav-item">
                             <a href="#pricing" className="mobile-nav-link" onClick={closeMenu}>Pricing</a>
+                        </li>
+                        <li className="mobile-nav-item">
+                            <Link to="/bid-assassin" className="mobile-nav-link" onClick={closeMenu}>Bid Assassin</Link>
                         </li>
                     </ul>
                     <div className="mobile-actions">
