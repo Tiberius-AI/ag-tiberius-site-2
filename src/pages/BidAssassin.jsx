@@ -137,7 +137,7 @@ function BidAssassinHero() {
                         The AI-powered bid system that finds the right projects before your competitors see them, builds your proposals in 2 minutes flat, and coaches you on how to close the GC.
                     </p>
                     <div className="ba-hero-buttons">
-                        <button className="ba-btn-primary">Start Free Trial →</button>
+                        <a className="ba-btn-primary" href="https://buy.stripe.com/7sYcN68Ovedtdzgbnv2sM0j" target="_blank" rel="noopener noreferrer">Start Free Trial →</a>
                         <button className="ba-btn-ghost">See How It Works</button>
                     </div>
                     <p className="ba-hero-microcopy">No credit card required · 3-minute demo</p>
@@ -688,7 +688,7 @@ function FinalCTA() {
                     Do you know about them? Your competitors don't either. Not yet.<br />
                     But someone is going to find them first.
                 </p>
-                <button className="ba-final-cta-button ba-reveal-scale ba-d2">Start Free Trial →</button>
+                <a className="ba-final-cta-button ba-reveal-scale ba-d2" href="https://buy.stripe.com/7sYcN68Ovedtdzgbnv2sM0j" target="_blank" rel="noopener noreferrer">Start Free Trial →</a>
                 <p className="ba-final-cta-fine-print ba-reveal ba-d3">$197/mo after trial · Cancel anytime · No contracts</p>
             </div>
         </section>
