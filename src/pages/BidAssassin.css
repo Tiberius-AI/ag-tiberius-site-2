@@ -218,7 +218,7 @@
 
 .ba-hero-video-outer {
     width: 100%;
-    max-width: 560px;
+    max-width: 700px;
 }
 
 .ba-hero-video-wrapper {
@@ -254,21 +254,21 @@
 }
 
 .ba-hero-caption-check {
-    width: 28px;
-    height: 28px;
+    width: 35px;
+    height: 35px;
     border-radius: 50%;
     background: #22c55e;
     color: #ffffff;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 14px;
+    font-size: 17px;
     font-weight: 700;
     flex-shrink: 0;
 }
 
 .ba-hero-caption-text {
-    font-size: 16px;
+    font-size: 20px;
     color: #4A4A4A;
     font-family: 'Inter', sans-serif;
     font-weight: 500;
@@ -277,7 +277,7 @@
 
 .ba-hero-caption-text strong {
     color: #1A1A1A;
-    font-size: 18px;
+    font-size: 22px;
     font-weight: 800;
     font-family: 'Montserrat', sans-serif;
 }
