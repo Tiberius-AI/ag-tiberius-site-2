@@ -582,7 +582,7 @@ function PricingSection() {
                     </div>
 
                     <div className="ba-pricing-cta-area">
-                        <button className="ba-pricing-cta">Start Your Free Trial →</button>
+                        <a className="ba-pricing-cta" href="https://buy.stripe.com/7sYcN68Ovedtdzgbnv2sM0j" target="_blank" rel="noopener noreferrer">Start Your Free Trial →</a>
                         <p className="ba-pricing-fine-print">Cancel anytime · No contracts · No setup fees</p>
                     </div>
                 </div>
@@ -696,6 +696,15 @@ function FinalCTA() {
 
 // ─── Page assembly ────────────────────────────────────────────
 const BidAssassin = () => {
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
+        script.async = true;
+        script.type = 'text/javascript';
+        document.body.appendChild(script);
+        return () => { document.body.removeChild(script); };
+    }, []);
+
     return (
         <main>
             <BidAssassinHero />
@@ -711,6 +720,7 @@ const BidAssassin = () => {
             <ObjectionsSection />
             <GuaranteeSection />
             <FinalCTA />
+            <elevenlabs-convai agent-id="agent_2001kn4nhzvfewxvjb7f6bzy41pt" />
         </main>
     );
 };
