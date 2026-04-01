@@ -125,7 +125,7 @@ function BidAssassinHero() {
                 {/* Content animates in on load — no scroll trigger needed */}
                 <div className="ba-hero-enter-content">
                     <div className="ba-hero-logo">
-                        <img src="/images/logo2.svg" alt="Bid Assassin" className="ba-hero-logo-img" />
+                        <img src="/images/logo2b.png" alt="Bid Assassin" className="ba-hero-logo-img" />
                     </div>
                     <p className="ba-hero-eyebrow">For Commercial Subcontractors &amp; Specialty Trades</p>
                     <h1 className="ba-hero-headline">
