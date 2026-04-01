@@ -720,7 +720,7 @@ const BidAssassin = () => {
             <ObjectionsSection />
             <GuaranteeSection />
             <FinalCTA />
-            <elevenlabs-convai agent-id="agent_2001kn4nhzvfewxvjb7f6bzy41pt" />
+            <elevenlabs-convai agent-id="agent_2001kn4nhzvfewxvjb7f6bzy41pt" dismissible="true" />
         </main>
     );
 };
