@@ -111,32 +111,25 @@
     align-items: center;
 }
 
-.ba-hero-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(177, 24, 31, 0.07);
-    border: 1px solid rgba(177, 24, 31, 0.2);
-    border-radius: 100px;
-    padding: 6px 16px;
-    margin-bottom: 24px;
+.ba-hero-logo {
+    padding-top: 32px;
+    margin-bottom: 16px;
 }
 
-.ba-hero-badge-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: #B1181F;
-    animation: baBlink 2s ease-in-out infinite;
+.ba-hero-logo-img {
+    height: 48px;
+    width: auto;
+    display: block;
 }
 
-.ba-hero-badge-text {
-    font-size: 11px;
-    font-weight: 700;
-    color: #B1181F;
-    letter-spacing: 0.1em;
-    font-family: 'Inter', sans-serif;
+.ba-hero-eyebrow {
+    font-size: 13px;
+    font-weight: 600;
+    color: #6B7280;
+    letter-spacing: 1.8px;
     text-transform: uppercase;
+    font-family: 'Inter', sans-serif;
+    margin-bottom: 24px;
 }
 
 .ba-hero-headline {
@@ -149,15 +142,11 @@
     line-height: 1.05;
 }
 
-.ba-hero-headline-accent {
-    color: #B1181F;
-}
-
 .ba-hero-headline-sub {
     font-family: 'Montserrat', sans-serif;
     font-size: 54px;
     font-weight: 800;
-    color: #9ca3af;
+    color: #B1181F;
     letter-spacing: -1.5px;
     line-height: 1.05;
     margin-bottom: 28px;
@@ -176,7 +165,7 @@
 .ba-hero-buttons {
     display: flex;
     gap: 14px;
-    margin-bottom: 32px;
+    margin-bottom: 0;
     flex-wrap: wrap;
 }
 
@@ -217,11 +206,6 @@
     border-color: #333333;
 }
 
-.ba-hero-microcopy {
-    font-size: 13px;
-    color: #9ca3af;
-    font-family: 'Inter', sans-serif;
-}
 
 /* ── Hero video ────────────────────────────────────────────── */
 .ba-hero-image-wrapper {
@@ -241,12 +225,18 @@
     border-radius: 14px;
     overflow: hidden;
     line-height: 0; /* removes gap under video */
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    box-shadow:
+        0 4px 6px rgba(0, 0, 0, 0.04),
+        0 10px 24px rgba(0, 0, 0, 0.08),
+        0 24px 48px rgba(0, 0, 0, 0.06);
 }
 
 .ba-hero-video {
     display: block;
     width: 100%;
     height: auto;
+    margin-bottom: -8px;
 }
 
 .ba-hero-caption {

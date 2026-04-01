@@ -124,13 +124,13 @@ function BidAssassinHero() {
             <div className="container ba-hero-inner">
                 {/* Content animates in on load — no scroll trigger needed */}
                 <div className="ba-hero-enter-content">
-                    <div className="ba-hero-badge">
-                        <span className="ba-hero-badge-dot" />
-                        <span className="ba-hero-badge-text">For Commercial Subcontractors & Specialty Trades</span>
+                    <div className="ba-hero-logo">
+                        <img src="/images/bid-assassin-logo.png" alt="Bid Assassin" className="ba-hero-logo-img" />
                     </div>
+                    <p className="ba-hero-eyebrow">For Commercial Subcontractors &amp; Specialty Trades</p>
                     <h1 className="ba-hero-headline">
                         You're Bidding on<br />
-                        20 Jobs <span className="ba-hero-headline-accent">to Win 4.</span>
+                        20 Jobs to Win 4.
                     </h1>
                     <span className="ba-hero-headline-sub">Here's How to Win 8.</span>
                     <p className="ba-hero-subline">
@@ -140,7 +140,6 @@ function BidAssassinHero() {
                         <a className="ba-btn-primary" href="https://buy.stripe.com/7sYcN68Ovedtdzgbnv2sM0j" target="_blank" rel="noopener noreferrer">Start Free Trial →</a>
                         <button className="ba-btn-ghost">See How It Works</button>
                     </div>
-                    <p className="ba-hero-microcopy">No credit card required · 3-minute demo</p>
                 </div>
 
                 <div className="ba-hero-image-wrapper ba-hero-enter-visual">
