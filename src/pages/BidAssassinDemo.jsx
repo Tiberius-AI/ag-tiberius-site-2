@@ -83,7 +83,6 @@ const BidAssassinDemo = () => {
                     ))}
                 </ul>
 
-                <p className="bad-scripture">Colossians 3:23 &mdash; Tiberius AI LLC</p>
             </section>
 
         </main>

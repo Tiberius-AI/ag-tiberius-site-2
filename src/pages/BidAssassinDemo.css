@@ -138,15 +138,6 @@
     flex-shrink: 0;
 }
 
-/* ── Scripture footer line ── */
-.bad-scripture {
-    margin-top: 32px;
-    font-size: 0.72rem;
-    color: #c9ced6;
-    font-family: Inter, sans-serif;
-    letter-spacing: 0.04em;
-}
-
 /* ── Mobile adjustments ── */
 @media (max-width: 600px) {
     .bad-intro {
