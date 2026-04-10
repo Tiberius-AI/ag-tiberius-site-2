@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import BidAssassin from './pages/BidAssassin';
+import BidAssassinDemo from './pages/BidAssassinDemo';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
 import './App.css';
@@ -18,6 +19,7 @@ function App() {
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
           <Route path="bid-assassin" element={<BidAssassin />} />
+          <Route path="bid-assassin-demo" element={<BidAssassinDemo />} />
           <Route path="privacy" element={<PrivacyPolicy />} />
           <Route path="terms" element={<TermsOfService />} />
         </Route>

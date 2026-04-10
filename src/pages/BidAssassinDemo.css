@@ -1,0 +1,168 @@
+/* ============================================================
+   BID ASSASSIN DEMO PAGE — BidAssassinDemo.css
+   Fonts: Montserrat (headings) · Inter (body)
+   Teal accent: #2d9f93
+   ============================================================ */
+
+@keyframes bad-fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes bad-cta-glow {
+    0%, 100% { box-shadow: 0 0 0 0 rgba(45,159,147,0.45), 0 4px 20px rgba(45,159,147,0.2); }
+    50%       { box-shadow: 0 0 0 8px rgba(45,159,147,0), 0 4px 32px rgba(45,159,147,0.45); }
+}
+
+/* ── Page shell ── */
+.bad-page {
+    background: #ffffff;
+    min-height: 60vh;
+}
+
+/* ── Logo + Headline ── */
+.bad-intro {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 48px 24px 32px;
+    animation: bad-fadeUp 0.7s ease both;
+}
+
+.bad-logo {
+    width: 280px;
+    max-width: 90%;
+    margin-bottom: 24px;
+    /* The image has a white background — sits naturally on white page */
+}
+
+.bad-headline {
+    font-family: Montserrat, 'Inter', sans-serif;
+    font-weight: 800;
+    font-size: clamp(1.35rem, 3vw, 2rem);
+    color: #0d1520;
+    max-width: 640px;
+    line-height: 1.25;
+    margin: 0;
+    animation: bad-fadeUp 0.7s 0.1s ease both;
+    opacity: 0;
+    animation-fill-mode: both;
+}
+
+/* ── Video section (dark spotlight) ── */
+.bad-video-section {
+    background: #0f1923;
+    padding: 40px 24px;
+    animation: bad-fadeUp 0.7s 0.2s ease both;
+    opacity: 0;
+    animation-fill-mode: both;
+}
+
+.bad-video-wrap {
+    max-width: 800px;
+    margin: 0 auto;
+    border-radius: 10px;
+    overflow: hidden;
+    border: 1px solid rgba(255,255,255,0.1);
+    box-shadow: 0 8px 48px rgba(0,0,0,0.5), 0 0 0 1px rgba(45,159,147,0.12);
+}
+
+/* ── CTA section ── */
+.bad-cta-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 40px 24px 56px;
+    animation: bad-fadeUp 0.6s 3s ease both;
+    opacity: 0;
+    animation-fill-mode: both;
+}
+
+.bad-cta-btn {
+    display: inline-block;
+    background-color: #2d9f93;
+    color: #ffffff;
+    font-family: Montserrat, 'Inter', sans-serif;
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 16px 44px;
+    border-radius: 10px;
+    text-decoration: none;
+    animation: bad-cta-glow 2.4s 3.5s ease-in-out infinite;
+    transition: background-color 0.2s ease, transform 0.15s ease;
+}
+
+.bad-cta-btn:hover {
+    background-color: #34b5a7;
+    transform: translateY(-1px);
+}
+
+.bad-cta-btn:active {
+    transform: translateY(0);
+}
+
+.bad-fine-print {
+    margin-top: 12px;
+    color: #9ca3af;
+    font-size: 0.85rem;
+    font-family: Inter, sans-serif;
+}
+
+/* ── Bullets ── */
+.bad-bullets {
+    list-style: none;
+    padding: 0;
+    margin: 24px 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 480px;
+    width: 100%;
+}
+
+.bad-bullet {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: Inter, sans-serif;
+    font-size: 0.95rem;
+    color: #4a5568;
+    text-align: left;
+}
+
+.bad-check {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+/* ── Scripture footer line ── */
+.bad-scripture {
+    margin-top: 32px;
+    font-size: 0.72rem;
+    color: #c9ced6;
+    font-family: Inter, sans-serif;
+    letter-spacing: 0.04em;
+}
+
+/* ── Mobile adjustments ── */
+@media (max-width: 600px) {
+    .bad-intro {
+        padding: 32px 16px 24px;
+    }
+    .bad-logo {
+        width: 220px;
+    }
+    .bad-video-section {
+        padding: 24px 12px;
+    }
+    .bad-cta-section {
+        padding: 32px 16px 48px;
+    }
+    .bad-cta-btn {
+        font-size: 1rem;
+        padding: 14px 32px;
+    }
+}
