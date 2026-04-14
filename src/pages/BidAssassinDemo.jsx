@@ -20,6 +20,15 @@ const BidAssassinDemo = () => {
         };
     }, []);
 
+    useEffect(() => {
+        const script = document.createElement('script');
+        script.src = 'https://unpkg.com/@elevenlabs/convai-widget-embed';
+        script.async = true;
+        script.type = 'text/javascript';
+        document.body.appendChild(script);
+        return () => { document.body.removeChild(script); };
+    }, []);
+
     const bullets = [
         'AI-powered proposals in under 5 minutes',
         'Find commercial leads before your competitors',
@@ -84,6 +93,8 @@ const BidAssassinDemo = () => {
                 </ul>
 
             </section>
+
+            <elevenlabs-convai agent-id="agent_4101kp6wd5j1e5w93e09zn2zdfrq" dismissible="true" avatar-image-url="https://tiberius.ai/images/charlie.gif" />
 
         </main>
     );
