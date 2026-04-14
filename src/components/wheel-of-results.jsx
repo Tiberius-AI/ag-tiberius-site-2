@@ -325,7 +325,7 @@ export default function WheelOfResults() {
         flexDirection: "column",
         alignItems: "center",
         justifyContent: "center",
-        padding: "20px 20px",
+        padding: "20px 8px",
         fontFamily: "'Outfit', 'DM Sans', sans-serif",
         position: "relative",
         overflow: "hidden",
@@ -399,14 +399,15 @@ export default function WheelOfResults() {
       <div
         style={{
           position: "relative",
-          width: WHEEL_SIZE,
-          height: WHEEL_SIZE,
+          width: "100%",
+          maxWidth: WHEEL_SIZE,
+          aspectRatio: "1 / 1",
           zIndex: 1,
         }}
       >
         <svg
-          width={WHEEL_SIZE}
-          height={WHEEL_SIZE}
+          width="100%"
+          height="100%"
           viewBox={`0 0 ${WHEEL_SIZE} ${WHEEL_SIZE}`}
           style={{ overflow: "visible" }}
         >
