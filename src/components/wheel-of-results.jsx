@@ -330,23 +330,6 @@ export default function WheelOfResults() {
         overflow: "hidden",
       }}
     >
-      {/* Subtle radial background glow */}
-      <div
-        style={{
-          position: "absolute",
-          top: "50%",
-          left: "50%",
-          transform: "translate(-50%, -50%)",
-          width: 800,
-          height: 800,
-          borderRadius: "50%",
-          background: active
-            ? `radial-gradient(circle, ${RED_GLOW} 0%, transparent 70%)`
-            : "radial-gradient(circle, rgba(0,0,0,0.02) 0%, transparent 70%)",
-          transition: "background 0.6s ease",
-          pointerEvents: "none",
-        }}
-      />
 
       {/* Title */}
       <div style={{ textAlign: "center", marginBottom: 36, position: "relative", zIndex: 1 }}>
