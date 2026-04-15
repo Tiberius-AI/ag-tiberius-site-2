@@ -1,27 +1,17 @@
-/* ============================================================
-   THANK YOU PAGE — ThankYou.css
-   Two-column hero, same header/footer as rest of site.
-   ============================================================ */
-
-/* ── Hero ───────────────────────────────────────────────────── */
+/* ── Thank You page ─────────────────────────────────────────── */
 .ty-page {
     background-color: var(--secondary-bg);
+    padding: 80px 0;
 }
 
-.ty-hero {
-    padding: 80px 0 70px;
-    background-color: var(--secondary-bg);
-    border-bottom: 1px solid #EBEBEB;
-}
-
-.ty-hero-inner {
+.ty-inner {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 64px;
     align-items: center;
 }
 
-/* ── Left content ───────────────────────────────────────────── */
+/* Left */
 .ty-content {
     max-width: 520px;
 }
@@ -45,10 +35,10 @@
 
 .ty-headline {
     font-family: 'Montserrat', sans-serif;
-    font-size: 52px;
+    font-size: 48px;
     font-weight: 800;
     color: var(--text-dark);
-    line-height: 1.08;
+    line-height: 1.1;
     letter-spacing: -1.5px;
     margin-bottom: 24px;
 }
@@ -58,7 +48,6 @@
     color: var(--text-gray);
     line-height: 1.7;
     margin-bottom: 24px;
-    max-width: 460px;
 }
 
 .ty-byline {
@@ -68,177 +57,38 @@
     margin: 0;
 }
 
-/* ── Right image ────────────────────────────────────────────── */
+/* Right — image cropped to portrait */
 .ty-image-col {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
+    width: 100%;
 }
 
-.ty-image-wrap {
+.ty-image {
+    display: block;
     width: 100%;
     max-width: 480px;
-    height: 480px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    object-position: 20% center;
     border-radius: 16px;
-    overflow: hidden;
     box-shadow:
         0 4px 6px rgba(0, 0, 0, 0.04),
         0 10px 24px rgba(0, 0, 0, 0.08),
         0 24px 48px rgba(0, 0, 0, 0.06);
 }
 
-.ty-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 25% center;
-    display: block;
-}
-
-/* ── What Happens Next ──────────────────────────────────────── */
-.ty-next {
-    padding: 72px 0;
-    background: #ffffff;
-    border-bottom: 1px solid #EBEBEB;
-}
-
-.ty-next-inner {
-    max-width: 700px;
-    margin: 0 auto;
-}
-
-.ty-next-heading {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 28px;
-    font-weight: 800;
-    color: var(--text-dark);
-    letter-spacing: -0.5px;
-    margin-bottom: 36px;
-}
-
-.ty-steps {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.ty-step {
-    display: flex;
-    align-items: flex-start;
-    gap: 20px;
-    background: var(--secondary-bg);
-    border-radius: 12px;
-    padding: 20px 24px;
-    border: 1px solid #EBEBEB;
-}
-
-.ty-step-num {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 13px;
-    font-weight: 800;
-    color: #B1181F;
-    letter-spacing: 0.05em;
-    flex-shrink: 0;
-    padding-top: 3px;
-}
-
-.ty-step-text {
-    font-size: 16px;
-    color: #374151;
-    line-height: 1.65;
-    margin: 0;
-}
-
-/* ── Closing ────────────────────────────────────────────────── */
-.ty-closing {
-    padding: 72px 0;
-    background-color: var(--secondary-bg);
-}
-
-.ty-closing-inner {
-    max-width: 600px;
-    margin: 0 auto;
-    text-align: center;
-}
-
-.ty-closing-text {
-    font-size: 18px;
-    color: var(--text-gray);
-    line-height: 1.7;
-    margin-bottom: 32px;
-}
-
-.ty-cta {
-    display: inline-block;
-    background: #B1181F;
-    color: #ffffff;
-    text-decoration: none;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
-    font-weight: 700;
-    padding: 16px 40px;
-    border-radius: 8px;
-    letter-spacing: 0.01em;
-    transition: background 0.2s, transform 0.15s;
-}
-
-.ty-cta:hover {
-    background: #8F1117;
-    transform: translateY(-1px);
-}
-
-/* ── Mobile ─────────────────────────────────────────────────── */
+/* Mobile */
 @media (max-width: 900px) {
-    .ty-hero-inner {
+    .ty-inner {
         grid-template-columns: 1fr;
         gap: 40px;
     }
 
-    .ty-content {
-        max-width: 100%;
-    }
-
     .ty-headline {
-        font-size: 38px;
+        font-size: 36px;
     }
 
-    .ty-image-wrap {
-        height: 300px;
+    .ty-image {
         max-width: 100%;
-    }
-
-    .ty-hero {
-        padding: 56px 0 48px;
-    }
-
-    .ty-next,
-    .ty-closing {
-        padding: 52px 0;
-    }
-
-    .ty-next-heading {
-        font-size: 24px;
-    }
-}
-
-@media (max-width: 480px) {
-    .ty-headline {
-        font-size: 32px;
-        letter-spacing: -0.5px;
-    }
-
-    .ty-para {
-        font-size: 16px;
-    }
-
-    .ty-image-wrap {
-        height: 240px;
-    }
-
-    .ty-step {
-        padding: 16px 18px;
+        aspect-ratio: 4 / 3;
     }
 }
