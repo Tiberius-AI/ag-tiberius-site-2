@@ -1,26 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import './ThankYou.css';
-
-function useReveal(ref) {
-    useEffect(() => {
-        if (!ref.current) return;
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('ty-visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            { threshold: 0.15 }
-        );
-        const els = ref.current.querySelectorAll('.ty-reveal');
-        els.forEach((el) => observer.observe(el));
-        return () => els.forEach((el) => observer.unobserve(el));
-    }, []);
-}
 
 const steps = [
     {
@@ -38,86 +18,77 @@ const steps = [
 ];
 
 export default function ThankYou() {
-    const pageRef = useRef(null);
-    useReveal(pageRef);
-
     return (
-        <div className="ty-page" ref={pageRef}>
-            {/* Subtle top accent */}
-            <div className="ty-top-bar" />
+        <main className="ty-page">
 
-            <div className="ty-container">
+            {/* ── Hero: two-column ── */}
+            <section className="ty-hero">
+                <div className="container ty-hero-inner">
 
-                {/* ── Hero ── */}
-                <section className="ty-hero ty-reveal ty-d1">
-                    <div className="ty-check">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3"
-                            strokeLinecap="round" strokeLinejoin="round">
-                            <polyline points="20 6 9 17 4 12" />
-                        </svg>
+                    {/* Left — content */}
+                    <div className="ty-content">
+                        <div className="ty-check">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                strokeWidth="3" strokeLinecap="round" strokeLinejoin="round">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg>
+                        </div>
+
+                        <h1 className="ty-headline">
+                            You're All Set.<br />
+                            We've Got<br />
+                            Your Results.
+                        </h1>
+
+                        <p className="ty-para">
+                            Thanks for taking the time to answer those questions honestly.
+                            That tells us a lot about where your business is right now —
+                            and more importantly, where it can go.
+                        </p>
+
+                        <p className="ty-byline">— Michael, Founder of Tiberius AI</p>
                     </div>
 
-                    <h1 className="ty-headline">
-                        You're All Set.<br />We've Got Your Results.
-                    </h1>
-
-                    <p className="ty-subtext">
-                        Thanks for taking the time to answer those questions honestly.
-                        That tells us a lot about where your business is right now —
-                        and more importantly, where it can go.
-                    </p>
-                </section>
-
-                {/* ── Photo ── */}
-                <div className="ty-photo-block ty-reveal ty-d2">
-                    <div className="ty-photo-wrap">
-                        <img
-                            src="/images/michael.jpg"
-                            alt="Michael"
-                            className="ty-photo"
-                        />
+                    {/* Right — image */}
+                    <div className="ty-image-col">
+                        <div className="ty-image-wrap">
+                            <img
+                                src="/images/michael.jpg"
+                                alt="Michael, Founder of Tiberius AI"
+                                className="ty-image"
+                            />
+                        </div>
                     </div>
-                    <p className="ty-name">Michael</p>
-                    <p className="ty-title">Founder, Tiberius AI</p>
+
                 </div>
+            </section>
 
-                {/* ── Divider ── */}
-                <div className="ty-divider ty-reveal ty-d3" />
-
-                {/* ── What Happens Next ── */}
-                <section className="ty-next ty-reveal ty-d3">
+            {/* ── What Happens Next ── */}
+            <section className="ty-next">
+                <div className="container ty-next-inner">
                     <h2 className="ty-next-heading">Here's What Happens Next</h2>
-
                     <ol className="ty-steps">
                         {steps.map((step) => (
-                            <li key={step.number} className="ty-step ty-reveal ty-d4">
+                            <li key={step.number} className="ty-step">
                                 <span className="ty-step-num">{step.number}</span>
                                 <p className="ty-step-text">{step.text}</p>
                             </li>
                         ))}
                     </ol>
-                </section>
+                </div>
+            </section>
 
-                {/* ── Divider ── */}
-                <div className="ty-divider ty-reveal ty-d4" />
-
-                {/* ── Closing ── */}
-                <section className="ty-closing ty-reveal ty-d5">
+            {/* ── Closing CTA ── */}
+            <section className="ty-closing">
+                <div className="container ty-closing-inner">
                     <p className="ty-closing-text">
                         In the meantime, if you want to see what we're building —
                         check out what Tiberius AI can do.
                     </p>
-                    <Link to="/" className="ty-cta">
-                        Explore Tiberius AI →
-                    </Link>
-                </section>
+                    <Link to="/" className="ty-cta">Explore Tiberius AI →</Link>
+                </div>
+            </section>
 
-            </div>
-
-            {/* Footer strip */}
-            <footer className="ty-footer">
-                <p>© {new Date().getFullYear()} Tiberius AI. All rights reserved.</p>
-            </footer>
-        </div>
+        </main>
     );
 }

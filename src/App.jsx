@@ -23,8 +23,8 @@ function App() {
           <Route path="bid-assassin-demo" element={<BidAssassinDemo />} />
           <Route path="privacy" element={<PrivacyPolicy />} />
           <Route path="terms" element={<TermsOfService />} />
+          <Route path="thank-you" element={<ThankYou />} />
         </Route>
-        <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
     </BrowserRouter>
   );
