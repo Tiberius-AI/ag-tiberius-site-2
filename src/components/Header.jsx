@@ -47,7 +47,7 @@ const Header = () => {
                 </nav>
 
                 <div className="header-actions desktop-only">
-                    <button className="cta-button primary-cta">Book a Demo</button>
+                    <a className="cta-button primary-cta" href="https://form.jotform.com/251756446512156" target="_blank" rel="noopener noreferrer">Book a Demo</a>
                 </div>
 
                 <div className="mobile-toggle-btn" onClick={toggleMenu}>
@@ -80,7 +80,7 @@ const Header = () => {
                         </li>
                     </ul>
                     <div className="mobile-actions">
-                        <button className="cta-button primary-cta" onClick={closeMenu}>Book a Demo</button>
+                        <a className="cta-button primary-cta" href="https://form.jotform.com/251756446512156" target="_blank" rel="noopener noreferrer" onClick={closeMenu}>Book a Demo</a>
                     </div>
                 </nav>
             </div>

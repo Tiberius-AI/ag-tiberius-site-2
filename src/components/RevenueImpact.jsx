@@ -175,7 +175,7 @@ const RevenueImpact = () => {
                         <div className="summary-state fade-in-up">
                             <span className="summary-small-text">The average small business loses $126,000/year to missed calls.</span>
                             <h2 className="summary-large-text">What if you never missed one again?</h2>
-                            <button className="summary-cta-button">Book Your Free AI Assessment</button>
+                            <a className="summary-cta-button" href="https://form.jotform.com/251756446512156" target="_blank" rel="noopener noreferrer">Book Your Free AI Assessment</a>
                         </div>
                     ) : (
                         <div className={`cycle-state ${isAnimatingOut ? 'slide-out-up' : 'slide-in-up'}`}>

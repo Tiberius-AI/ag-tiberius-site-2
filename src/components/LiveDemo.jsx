@@ -125,7 +125,7 @@ const LiveDemo = () => {
                         </li>
                     </ul>
 
-                    <button className="demo-cta">Book a Demo</button>
+                    <a className="demo-cta" href="https://form.jotform.com/251756446512156" target="_blank" rel="noopener noreferrer">Book a Demo</a>
                 </div>
 
                 {/* Chat Simulation */}

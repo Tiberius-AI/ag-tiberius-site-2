@@ -24,9 +24,9 @@ const OurApproach = () => {
                         </p>
                     </div>
 
-                    <button className="approach-cta">
+                    <a className="approach-cta" href="https://form.jotform.com/251756446512156" target="_blank" rel="noopener noreferrer">
                         Let's Talk About Your Business
-                    </button>
+                    </a>
                 </div>
 
                 {/* Image Content (Right on Desktop, Bottom on Mobile) */}

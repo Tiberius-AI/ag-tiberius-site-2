@@ -167,7 +167,7 @@ const AudioDemo = () => {
                         </li>
                     </ul>
 
-                    <button className="cta-button">Get Your AI Voice Agent</button>
+                    <a className="cta-button" href="https://form.jotform.com/251756446512156" target="_blank" rel="noopener noreferrer">Get Your AI Voice Agent</a>
                 </div>
 
                 {/* Right Column: Audio Orb Player */}

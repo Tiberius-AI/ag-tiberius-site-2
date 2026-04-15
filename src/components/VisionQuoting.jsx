@@ -58,7 +58,7 @@ const VisionQuoting = () => {
                         </li>
                     </ul>
 
-                    <button className="cta-button primary-cta vq-cta">See How Vision Quoting Works</button>
+                    <a className="cta-button primary-cta vq-cta" href="https://form.jotform.com/251756446512156" target="_blank" rel="noopener noreferrer">See How Vision Quoting Works</a>
                 </div>
 
                 {/* RIGHT COLUMN: Phone Animation */}

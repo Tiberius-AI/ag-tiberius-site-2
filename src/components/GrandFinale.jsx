@@ -133,7 +133,7 @@ const GrandFinale = () => {
 
                 {/* CTA Button */}
                 <div className="gf-cta-container animate-on-scroll fade-up delay-400">
-                    <button className="gf-cta-button">Get Started Now</button>
+                    <a className="gf-cta-button" href="https://form.jotform.com/251756446512156" target="_blank" rel="noopener noreferrer">Get Started Now</a>
                     <p className="gf-cta-subtext">No contracts · Cancel anytime · Up and running in 48 hours</p>
                 </div>
             </div>

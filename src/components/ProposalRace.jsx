@@ -187,7 +187,7 @@ const ProposalRace = () => {
                         </li>
                     </ul>
 
-                    <button className="cta-button primary-cta race-cta">See Bid Assassin in Action</button>
+                    <a className="cta-button primary-cta race-cta" href="https://form.jotform.com/251756446512156" target="_blank" rel="noopener noreferrer">See Bid Assassin in Action</a>
                     <p className="demo-note"><i>Watch a 3-minute demo</i></p>
                 </div>
             </div>
