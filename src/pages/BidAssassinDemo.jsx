@@ -94,7 +94,7 @@ const BidAssassinDemo = () => {
 
             </section>
 
-            <elevenlabs-convai agent-id="agent_4101kp6wd5j1e5w93e09zn2zdfrq" dismissible="true" avatar-image-url="https://tiberius.ai/images/charlie2.gif" />
+            <elevenlabs-convai agent-id="agent_4101kp6wd5j1e5w93e09zn2zdfrq" dismissible="true" avatar-image-url="https://tiberius.ai/images/charlie2c.gif" />
 
         </main>
     );
