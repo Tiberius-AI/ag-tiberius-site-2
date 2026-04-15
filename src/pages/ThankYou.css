@@ -1,0 +1,255 @@
+/* ============================================================
+   THANK YOU PAGE — ThankYou.css
+   Mobile-first, generous spacing, warm and human.
+   ============================================================ */
+
+/* ── Scroll reveal ─────────────────────────────────────────── */
+.ty-reveal {
+    opacity: 0;
+    transform: translateY(22px);
+    transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.ty-visible .ty-reveal,
+.ty-reveal.ty-visible {
+    opacity: 1;
+    transform: none;
+}
+.ty-d1 { transition-delay: 0.05s; }
+.ty-d2 { transition-delay: 0.18s; }
+.ty-d3 { transition-delay: 0.28s; }
+.ty-d4 { transition-delay: 0.38s; }
+.ty-d5 { transition-delay: 0.48s; }
+
+/* ── Page shell ─────────────────────────────────────────────── */
+.ty-page {
+    min-height: 100vh;
+    background-color: #FAFAF8;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Inter', sans-serif;
+    color: #1A1A1A;
+}
+
+.ty-top-bar {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, #B1181F 0%, #d4354a 100%);
+    flex-shrink: 0;
+}
+
+.ty-container {
+    width: 100%;
+    max-width: 540px;
+    padding: 56px 24px 48px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0;
+    flex: 1;
+}
+
+/* ── Hero ───────────────────────────────────────────────────── */
+.ty-hero {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.ty-check {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    background: #B1181F;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 28px;
+}
+
+.ty-check svg {
+    width: 24px;
+    height: 24px;
+}
+
+.ty-headline {
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(28px, 7vw, 38px);
+    font-weight: 800;
+    color: #1A1A1A;
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    margin-bottom: 20px;
+}
+
+.ty-subtext {
+    font-size: 16px;
+    color: #4A4A4A;
+    line-height: 1.7;
+    max-width: 440px;
+    margin: 0 auto;
+}
+
+/* ── Photo block ────────────────────────────────────────────── */
+.ty-photo-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.ty-photo-wrap {
+    width: 130px;
+    height: 130px;
+    border-radius: 50%;
+    overflow: hidden;
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.10),
+        0 1px 4px rgba(0, 0, 0, 0.06);
+    margin-bottom: 14px;
+    border: 3px solid #ffffff;
+}
+
+.ty-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.ty-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin: 0 0 4px;
+}
+
+.ty-title {
+    font-size: 13px;
+    color: #6B7280;
+    margin: 0;
+    letter-spacing: 0.02em;
+}
+
+/* ── Divider ────────────────────────────────────────────────── */
+.ty-divider {
+    width: 48px;
+    height: 2px;
+    background: #E5E7EB;
+    border-radius: 2px;
+    margin-bottom: 40px;
+}
+
+/* ── What Happens Next ──────────────────────────────────────── */
+.ty-next {
+    width: 100%;
+    margin-bottom: 40px;
+}
+
+.ty-next-heading {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1A1A1A;
+    margin-bottom: 28px;
+    letter-spacing: -0.02em;
+}
+
+.ty-steps {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.ty-step {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    background: #ffffff;
+    border-radius: 12px;
+    padding: 18px 20px;
+    border: 1px solid #EBEBEB;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+}
+
+.ty-step-num {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    color: #B1181F;
+    letter-spacing: 0.04em;
+    flex-shrink: 0;
+    padding-top: 2px;
+}
+
+.ty-step-text {
+    font-size: 15px;
+    color: #374151;
+    line-height: 1.6;
+    margin: 0;
+}
+
+/* ── Closing ────────────────────────────────────────────────── */
+.ty-closing {
+    text-align: center;
+    width: 100%;
+}
+
+.ty-closing-text {
+    font-size: 15px;
+    color: #6B7280;
+    line-height: 1.7;
+    margin-bottom: 28px;
+    max-width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.ty-cta {
+    display: inline-block;
+    background: #B1181F;
+    color: #ffffff;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 16px 36px;
+    border-radius: 8px;
+    letter-spacing: 0.01em;
+    transition: background 0.2s, transform 0.15s;
+}
+
+.ty-cta:hover {
+    background: #8F1117;
+    transform: translateY(-1px);
+}
+
+/* ── Footer ─────────────────────────────────────────────────── */
+.ty-footer {
+    width: 100%;
+    padding: 24px;
+    text-align: center;
+    border-top: 1px solid #EBEBEB;
+    margin-top: auto;
+}
+
+.ty-footer p {
+    font-size: 12px;
+    color: #9CA3AF;
+    margin: 0;
+}
+
+/* ── Mobile tweaks ──────────────────────────────────────────── */
+@media (max-width: 480px) {
+    .ty-container {
+        padding: 40px 20px 40px;
+    }
+
+    .ty-step {
+        padding: 16px;
+    }
+}

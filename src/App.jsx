@@ -8,6 +8,7 @@ import BidAssassin from './pages/BidAssassin';
 import BidAssassinDemo from './pages/BidAssassinDemo';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import TermsOfService from './components/TermsOfService';
+import ThankYou from './pages/ThankYou';
 import './App.css';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           <Route path="privacy" element={<PrivacyPolicy />} />
           <Route path="terms" element={<TermsOfService />} />
         </Route>
+        <Route path="/thank-you" element={<ThankYou />} />
       </Routes>
     </BrowserRouter>
   );
